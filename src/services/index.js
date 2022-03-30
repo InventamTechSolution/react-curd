@@ -1,4 +1,6 @@
 import axios from "axios";
+
+//get user api call
 export const getUser = () =>
   new Promise((resolve, reject) =>
     axios
@@ -11,6 +13,7 @@ export const getUser = () =>
       })
   );
 
+//add user api call
 export const addUser = (data) =>
   new Promise((resolve, reject) =>
     axios
@@ -23,6 +26,7 @@ export const addUser = (data) =>
       })
   );
 
+// update user api call
 export const updateUser = (id) =>
   new Promise((resolve, reject) =>
     axios

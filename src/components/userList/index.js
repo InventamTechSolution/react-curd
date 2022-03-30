@@ -2,13 +2,16 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+//import get user Action from actions
 import { handleGetUser } from "../../redux/actions/index";
 import { Link } from "react-router-dom";
 export function UserList() {
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(handleGetUser());
   }, []);
+  //get users data from reducers(store)
   const _GET_USER = useSelector((e) => e?.user);
 
   console.log("userDetail", _GET_USER);

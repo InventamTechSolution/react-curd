@@ -15,6 +15,7 @@ export function AddUser() {
 
   const handleClick = () => {
     if (name && email) {
+      //dispatch action for api call
       dispatch(
         handleAddUser({
           name,

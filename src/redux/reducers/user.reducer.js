@@ -1,4 +1,6 @@
+//import actions Types
 import * as Actions from "../actions/index";
+//declare initialState variables
 const initialState = {
   loading: false,
   getUser: [],
@@ -14,6 +16,8 @@ const albums = function (state = initialState, action) {
         loading: true,
       };
     }
+
+    //get user Types and return statement
     case Actions.GET_USER: {
       return {
         ...state,
@@ -21,6 +25,7 @@ const albums = function (state = initialState, action) {
         loading: true,
       };
     }
+    // add Types and return statement
     case Actions.ADD_USER: {
       return {
         ...state,
@@ -28,6 +33,7 @@ const albums = function (state = initialState, action) {
         loading: true,
       };
     }
+    //delete Types and return statement
     case "DELETE_USER": {
       const existingUser = state.getUser.find(
         (user) => user.id === action.payload
@@ -42,6 +48,7 @@ const albums = function (state = initialState, action) {
         loading: true,
       };
     }
+    //update  Types and return statement
     case Actions.UPDATE_USER: {
       const { id, name, email } = action.payload;
       const existingUser = state.getUser.find((user) => user.id === id);
@@ -54,6 +61,7 @@ const albums = function (state = initialState, action) {
         loading: true,
       };
     }
+    //store user id for update user
     case "USER_ID": {
       return {
         ...state,
@@ -61,6 +69,7 @@ const albums = function (state = initialState, action) {
         loading: true,
       };
     }
+
     case Actions.USER_ERROR: {
       return {
         ...state,

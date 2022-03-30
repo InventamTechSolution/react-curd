@@ -4,7 +4,9 @@ import { handleUpdateUser } from "../../redux/actions/index";
 import { useState } from "react";
 
 export function EditUser() {
+  //get users id from reducers(store)
   const _USER_ID = useSelector((e) => e?.user?.userId);
+  //get users data from reducers(store) and check update id and user id
   const USER = useSelector((e) =>
     e?.user?.getUser.find((user) => user.id === _USER_ID)
   );
@@ -20,6 +22,7 @@ export function EditUser() {
 
   const handleClick = () => {
     if (name && email) {
+      //dispatch action for api call
       dispatch(
         handleUpdateUser({
           id: _USER_ID,
